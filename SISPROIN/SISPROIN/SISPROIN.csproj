@@ -1,0 +1,570 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2FCA9679-B569-4229-9D32-C5333BE4C977}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>SISPROIN</RootNamespace>
+    <AssemblyName>SISPROIN</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>BOLAAZUL.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup />
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="LibPrintTicket, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\LibPrintTicket.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Security, Version=4.0.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <HintPath>..\packages\Npgsql.2.2.7\lib\net45\Mono.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Npgsql, Version=2.2.7.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Npgsql.2.2.7\lib\net45\Npgsql.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.1.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.3.0\lib\portable-net45+win8+wp8+wpa81\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Clases\ConectarDB.cs" />
+    <Compile Include="Clases\CrearTicket.cs" />
+    <Compile Include="Clases\Utilitarios.cs" />
+    <Compile Include="Clases\_ASISTEDIAS.cs" />
+    <Compile Include="Clases\_CONFPRINT.cs" />
+    <Compile Include="Clases\_DEPARTA.cs" />
+    <Compile Include="Clases\_GRUPCOMOBS.cs" />
+    <Compile Include="Clases\_GRUPOINV.cs" />
+    <Compile Include="Clases\_MOVINV.cs" />
+    <Compile Include="Clases\_PERSONAL.cs" />
+    <Compile Include="Clases\_PRODUCTOS.cs" />
+    <Compile Include="Clases\_TIPDOC.cs" />
+    <Compile Include="Clases\_TIPIVA.cs" />
+    <Compile Include="Clases\_TIPMOVCAJA.cs" />
+    <Compile Include="Clases\_TIPTRAN.cs" />
+    <Compile Include="Clases\_UNIDMEDIA.cs" />
+    <Compile Include="Clases\_USUARIOS.cs" />
+    <Compile Include="Clases\_VACACION.cs" />
+    <Compile Include="Clases\_VENOBSDOC.cs" />
+    <Compile Include="DTSet\DTSDATOS.cs">
+      <DependentUpon>DTSDATOS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DTSet\DTSDATOS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DTSDATOS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Configuracion\FormAGREGARUSU.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Configuracion\FormAGREGARUSU.Designer.cs">
+      <DependentUpon>FormAGREGARUSU.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FormBUSQUEDAS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormBUSQUEDAS.Designer.cs">
+      <DependentUpon>FormBUSQUEDAS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\RHumanos\FormDEPARTAMENTO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\RHumanos\FormDEPARTAMENTO.Designer.cs">
+      <DependentUpon>FormDEPARTAMENTO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FormINICIO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormINICIO.Designer.cs">
+      <DependentUpon>FormINICIO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Configuracion\FormNIVELESMENU.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Configuracion\FormNIVELESMENU.Designer.cs">
+      <DependentUpon>FormNIVELESMENU.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FormOPCIONES.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormOPCIONES.Designer.cs">
+      <DependentUpon>FormOPCIONES.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FormPASSWORD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormPASSWORD.Designer.cs">
+      <DependentUpon>FormPASSWORD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Configuracion\FormPERMISOS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Configuracion\FormPERMISOS.Designer.cs">
+      <DependentUpon>FormPERMISOS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FormPRIN_CONFIGURAR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormPRIN_CONFIGURAR.Designer.cs">
+      <DependentUpon>FormPRIN_CONFIGURAR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FormPRIN_RHUMANOS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormPRIN_RHUMANOS.Designer.cs">
+      <DependentUpon>FormPRIN_RHUMANOS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FormPRIN_VENOSB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormPRIN_VENOSB.Designer.cs">
+      <DependentUpon>FormPRIN_VENOSB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FormVISORRPT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormVISORRPT.Designer.cs">
+      <DependentUpon>FormVISORRPT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\RHumanos\FormGRUPOPERSONAL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\RHumanos\FormGRUPOPERSONAL.Designer.cs">
+      <DependentUpon>FormGRUPOPERSONAL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\RHumanos\FormINASISTENCIADIA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\RHumanos\FormINASISTENCIADIA.Designer.cs">
+      <DependentUpon>FormINASISTENCIADIA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\RHumanos\FormPERSONAL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\RHumanos\FormPERSONAL.Designer.cs">
+      <DependentUpon>FormPERSONAL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\RHumanos\FormVACACION.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\RHumanos\FormVACACION.Designer.cs">
+      <DependentUpon>FormVACACION.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\VentasObsequios\FormCONIMPR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\VentasObsequios\FormCONIMPR.Designer.cs">
+      <DependentUpon>FormCONIMPR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\VentasObsequios\FormFACTURA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\VentasObsequios\FormFACTURA.Designer.cs">
+      <DependentUpon>FormFACTURA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\VentasObsequios\FormFILLINVPRO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\VentasObsequios\FormFILLINVPRO.Designer.cs">
+      <DependentUpon>FormFILLINVPRO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\VentasObsequios\FormFILLINVPROCED.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\VentasObsequios\FormFILLINVPROCED.Designer.cs">
+      <DependentUpon>FormFILLINVPROCED.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\VentasObsequios\FormFILLRESMOINV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\VentasObsequios\FormFILLRESMOINV.Designer.cs">
+      <DependentUpon>FormFILLRESMOINV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\VentasObsequios\FormGRUPOINV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\VentasObsequios\FormGRUPOINV.Designer.cs">
+      <DependentUpon>FormGRUPOINV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\VentasObsequios\FormMOVINVETARIO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\VentasObsequios\FormMOVINVETARIO.Designer.cs">
+      <DependentUpon>FormMOVINVETARIO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\VentasObsequios\FormOBSEQUIOS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\VentasObsequios\FormOBSEQUIOS.Designer.cs">
+      <DependentUpon>FormOBSEQUIOS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\VentasObsequios\FormPRODUCTOS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\VentasObsequios\FormPRODUCTOS.Designer.cs">
+      <DependentUpon>FormPRODUCTOS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\VentasObsequios\FormTIPCAJ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\VentasObsequios\FormTIPCAJ.Designer.cs">
+      <DependentUpon>FormTIPCAJ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\VentasObsequios\FormTIPDOC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\VentasObsequios\FormTIPDOC.Designer.cs">
+      <DependentUpon>FormTIPDOC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\VentasObsequios\FormTIPIVA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\VentasObsequios\FormTIPIVA.Designer.cs">
+      <DependentUpon>FormTIPIVA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\VentasObsequios\FormTIPTRANSA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\VentasObsequios\FormTIPTRANSA.Designer.cs">
+      <DependentUpon>FormTIPTRANSA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\VentasObsequios\FormUNIDADMED.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\VentasObsequios\FormUNIDADMED.Designer.cs">
+      <DependentUpon>FormUNIDADMED.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\VentasObsequios\FormVERULTENTR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\VentasObsequios\FormVERULTENTR.Designer.cs">
+      <DependentUpon>FormVERULTENTR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Funciones\Fun_AGREGARUSU.cs" />
+    <Compile Include="Funciones\Fun_ASISTEDIA.cs" />
+    <Compile Include="Funciones\Fun_CONFPRINT.cs" />
+    <Compile Include="Funciones\Fun_Control_Acceso.cs" />
+    <Compile Include="Funciones\Fun_DEPARTA.cs" />
+    <Compile Include="Funciones\Fun_GRUPCOMOBS.cs" />
+    <Compile Include="Funciones\Fun_GRUPOINV.cs" />
+    <Compile Include="Funciones\Fun_MOVINV.cs" />
+    <Compile Include="Funciones\Fun_PERSONAL.cs" />
+    <Compile Include="Funciones\Fun_PRODUCTOS.cs" />
+    <Compile Include="Funciones\Fun_TIPDOC.cs" />
+    <Compile Include="Funciones\Fun_TIPIVA.cs" />
+    <Compile Include="Funciones\Fun_TIPMOVCAJA.cs" />
+    <Compile Include="Funciones\Fun_TIPTRAN.cs" />
+    <Compile Include="Funciones\Fun_UNIDMEDIA.cs" />
+    <Compile Include="Funciones\Fun_USUARIOS.cs" />
+    <Compile Include="Funciones\Fun_VACACION.cs" />
+    <Compile Include="Funciones\Fun_VENOBSDOC.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reportes\CRp_MOVINVPRO.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CRp_MOVINVPRO.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\CRp_MOVINVPROCED.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CRp_MOVINVPROCED.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\CRp_RESMOVINV.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CRp_RESMOVINV.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <EmbeddedResource Include="Formularios\Configuracion\FormAGREGARUSU.resx">
+      <DependentUpon>FormAGREGARUSU.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormBUSQUEDAS.resx">
+      <DependentUpon>FormBUSQUEDAS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\RHumanos\FormDEPARTAMENTO.resx">
+      <DependentUpon>FormDEPARTAMENTO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormINICIO.resx">
+      <DependentUpon>FormINICIO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Configuracion\FormNIVELESMENU.resx">
+      <DependentUpon>FormNIVELESMENU.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormOPCIONES.resx">
+      <DependentUpon>FormOPCIONES.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormPASSWORD.resx">
+      <DependentUpon>FormPASSWORD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Configuracion\FormPERMISOS.resx">
+      <DependentUpon>FormPERMISOS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormPRIN_CONFIGURAR.resx">
+      <DependentUpon>FormPRIN_CONFIGURAR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormPRIN_RHUMANOS.resx">
+      <DependentUpon>FormPRIN_RHUMANOS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormPRIN_VENOSB.resx">
+      <DependentUpon>FormPRIN_VENOSB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormVISORRPT.resx">
+      <DependentUpon>FormVISORRPT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\RHumanos\FormGRUPOPERSONAL.resx">
+      <DependentUpon>FormGRUPOPERSONAL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\RHumanos\FormINASISTENCIADIA.resx">
+      <DependentUpon>FormINASISTENCIADIA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\RHumanos\FormPERSONAL.resx">
+      <DependentUpon>FormPERSONAL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\RHumanos\FormVACACION.resx">
+      <DependentUpon>FormVACACION.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\VentasObsequios\FormCONIMPR.resx">
+      <DependentUpon>FormCONIMPR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\VentasObsequios\FormFACTURA.resx">
+      <DependentUpon>FormFACTURA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\VentasObsequios\FormFILLINVPRO.resx">
+      <DependentUpon>FormFILLINVPRO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\VentasObsequios\FormFILLINVPROCED.resx">
+      <DependentUpon>FormFILLINVPROCED.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\VentasObsequios\FormFILLRESMOINV.resx">
+      <DependentUpon>FormFILLRESMOINV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\VentasObsequios\FormGRUPOINV.resx">
+      <DependentUpon>FormGRUPOINV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\VentasObsequios\FormMOVINVETARIO.resx">
+      <DependentUpon>FormMOVINVETARIO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\VentasObsequios\FormOBSEQUIOS.resx">
+      <DependentUpon>FormOBSEQUIOS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\VentasObsequios\FormPRODUCTOS.resx">
+      <DependentUpon>FormPRODUCTOS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\VentasObsequios\FormTIPCAJ.resx">
+      <DependentUpon>FormTIPCAJ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\VentasObsequios\FormTIPDOC.resx">
+      <DependentUpon>FormTIPDOC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\VentasObsequios\FormTIPIVA.resx">
+      <DependentUpon>FormTIPIVA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\VentasObsequios\FormTIPTRANSA.resx">
+      <DependentUpon>FormTIPTRANSA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\VentasObsequios\FormUNIDADMED.resx">
+      <DependentUpon>FormUNIDADMED.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\VentasObsequios\FormVERULTENTR.resx">
+      <DependentUpon>FormVERULTENTR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Reportes\CRp_MOVINVPRO.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CRp_MOVINVPRO.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\CRp_MOVINVPROCED.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CRp_MOVINVPROCED.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\CRp_RESMOVINV.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CRp_RESMOVINV.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="DTSet\DTSDATOS.xsc">
+      <DependentUpon>DTSDATOS.xsd</DependentUpon>
+    </None>
+    <None Include="DTSet\DTSDATOS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DTSDATOS.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DTSet\DTSDATOS.xss">
+      <DependentUpon>DTSDATOS.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagen\VenObs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagen\Aceptar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagen\Anterio.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagen\Busqueda.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagen\Cancelar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagen\Compras.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagen\Despacho.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagen\Eliminar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagen\Guarda.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagen\Imprimir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagen\LogoRQM.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagen\Mas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagen\Modificar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagen\Nuevo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagen\Primero.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagen\RHumanos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagen\Salir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagen\Salir2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagen\Settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagen\Siguiente.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagen\Ultimo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagen\User.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="BOLAAZUL.ico" />
+    <None Include="Imagen\UtiVac.png" />
+    <None Include="Imagen\Windows_logo.png" />
+    <None Include="Imagen\UtPre.png" />
+    <None Include="Imagen\UtiEntr.png" />
+    <None Include="Imagen\filtros.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
