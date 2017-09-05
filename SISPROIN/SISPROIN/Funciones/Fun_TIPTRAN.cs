@@ -13,11 +13,11 @@ namespace SISPROIN.Funciones
 {
     class Fun_TIPTRAN
     {
-        Clases.ConectarDB dbSQLConn = new Clases.ConectarDB();
+        ConectarDB dbSQLConn = new ConectarDB();
         string Elementos = " codtra, tiptra, destra, statra, codpro ";
-        private Clases._TIPTRAN LLenar(NpgsqlDataReader Dr)
+        private _TIPTRAN LLenar(NpgsqlDataReader Dr)
         {
-            return new Clases._TIPTRAN(Dr.GetInt32(0), Dr.GetString(1), Dr.GetString(2), Dr.GetInt32(3), Dr.GetValue(4) as int[]);
+            return new _TIPTRAN(Dr.GetInt32(0), Dr.GetString(1), Dr.GetString(2), Dr.GetInt32(3), Dr.GetValue(4) as int[]);
         }
         public string Correlativo()
         {
@@ -43,10 +43,10 @@ namespace SISPROIN.Funciones
                 return "1";
             }
         }
-        public Clases._TIPTRAN BuscarUltimo()
+        public _TIPTRAN BuscarUltimo()
         {
             dbSQLConn.ConecDb_Abrir();
-            Clases._TIPTRAN usr = new Clases._TIPTRAN();
+            _TIPTRAN usr = new _TIPTRAN();
             NpgsqlDataReader Dr = null;
             string Sql = "SELECT " + Elementos + " FROM tiptransa ORDER BY codtra DESC LIMIT 1";
             NpgsqlCommand cmd = new NpgsqlCommand(Sql, dbSQLConn.Cnn);
@@ -66,10 +66,10 @@ namespace SISPROIN.Funciones
                 return usr;
             }
         }
-        public Clases._TIPTRAN BuscarPrimero()
+        public _TIPTRAN BuscarPrimero()
         {
             dbSQLConn.ConecDb_Abrir();
-            Clases._TIPTRAN usr = new Clases._TIPTRAN();
+            _TIPTRAN usr = new _TIPTRAN();
             NpgsqlDataReader Dr = null;
             string Sql = "SELECT " + Elementos + " FROM tiptransa ORDER BY codtra ASC LIMIT 1 ";
             NpgsqlCommand cmd = new NpgsqlCommand(Sql, dbSQLConn.Cnn);
@@ -91,10 +91,10 @@ namespace SISPROIN.Funciones
                 return usr;
             }
         }
-        public Clases._TIPTRAN BuscarAnterior(Clases._TIPTRAN TTR)
+        public _TIPTRAN BuscarAnterior(_TIPTRAN TTR)
         {
             dbSQLConn.ConecDb_Abrir();
-            Clases._TIPTRAN usr = new Clases._TIPTRAN();
+            _TIPTRAN usr = new _TIPTRAN();
             NpgsqlDataReader Dr = null;
             string Sql = "SELECT " + Elementos + " FROM tiptransa WHERE codtra < @codtra ORDER BY codtra DESC LIMIT 1";
             NpgsqlCommand cmd = new NpgsqlCommand(Sql, dbSQLConn.Cnn);
@@ -115,10 +115,10 @@ namespace SISPROIN.Funciones
                 return BuscarPrimero();
             }
         }
-        public Clases._TIPTRAN BuscarSiguiente(Clases._TIPTRAN TTR)
+        public _TIPTRAN BuscarSiguiente(_TIPTRAN TTR)
         {
             dbSQLConn.ConecDb_Abrir();
-            Clases._TIPTRAN usr = new Clases._TIPTRAN();
+            _TIPTRAN usr = new _TIPTRAN();
             NpgsqlDataReader Dr = null;
             string Sql = "SELECT " + Elementos + " FROM tiptransa WHERE codtra > @codtra ORDER BY codtra ASC LIMIT 1";
             NpgsqlCommand cmd = new NpgsqlCommand(Sql, dbSQLConn.Cnn);
@@ -139,7 +139,7 @@ namespace SISPROIN.Funciones
                 return BuscarUltimo();
             }
         }
-        public Boolean Nuevo(Clases._TIPTRAN TTR)
+        public Boolean Nuevo(_TIPTRAN TTR)
         {
             if (!Existe(TTR.tiptra))
             {
@@ -160,7 +160,7 @@ namespace SISPROIN.Funciones
                 return false;
             }
         }
-        public Boolean Modificar(Clases._TIPTRAN TTR)
+        public Boolean Modificar( _TIPTRAN TTR)
         {
             if (Existe(TTR.tiptra))
             {
@@ -286,7 +286,7 @@ namespace SISPROIN.Funciones
         public _TIPTRAN BuscarTipo(string vtiptra)
         {
             dbSQLConn.ConecDb_Abrir();
-            _TIPTRAN usr = new Clases._TIPTRAN();
+            _TIPTRAN usr = new _TIPTRAN();
             NpgsqlDataReader Dr = null;
             string Sql = "SELECT " + Elementos + " FROM tiptransa WHERE tiptra = @tiptra LIMIT 1";
             NpgsqlCommand cmd = new NpgsqlCommand(Sql, dbSQLConn.Cnn);
@@ -336,10 +336,20 @@ namespace SISPROIN.Funciones
             if (dr2.HasRows)
             {
                 dr2.Read();
-                R = dr2.GetInt32(0);
-                dr2.Close();
-                dbSQLConn.ConecDb_Close();
-                return R;
+                //if (dr2.GetInt32(0) = null)
+                //{
+                //    return 0;
+                //    dr2.Close();
+                //    dbSQLConn.ConecDb_Close();
+                //}
+                //else
+                //{
+                    R = dr2.GetInt32(0);
+                    dr2.Close();
+                    dbSQLConn.ConecDb_Close();
+                    return R;
+                //}
+               
             }
             else
             {

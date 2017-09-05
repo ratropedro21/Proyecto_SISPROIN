@@ -231,9 +231,28 @@ namespace SISPROIN.Formularios
             }
         }
 
-        private void entregaDeObsequiosToolStripMenuItem_Click(object sender, EventArgs e)
+        private void cobranzaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             TUsuario[4] = "4";
+            TUsuario[5] = "1";
+            int Permiso = Validar.Validar_Nivel_2(TUsuario);
+            TUsuario[6] = Permiso.ToString();
+            if (Permiso < 5)
+            {
+                FormCOBRANZA Fmr = new FormCOBRANZA(TUsuario);
+                Fmr.MdiParent = this;
+                Fmr.Show();
+                Fmr.Activate();
+            }
+            else
+            {
+                MessageBox.Show("No tiene el permiso para acceder.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+        }
+
+        private void entregaDeObsequiosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TUsuario[4] = "5";
             TUsuario[5] = "1";
             int Permiso = Validar.Validar_Nivel_2(TUsuario);
             TUsuario[6] = Permiso.ToString();
@@ -252,7 +271,7 @@ namespace SISPROIN.Formularios
 
         private void movimientoInventarioPorProductosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            TUsuario[4] = "5";
+            TUsuario[4] = "6";
             TUsuario[5] = "1";
             int Permiso = Validar.Validar_Nivel_2(TUsuario);
             TUsuario[6] = Permiso.ToString();
@@ -271,7 +290,7 @@ namespace SISPROIN.Formularios
 
         private void movimientoDeInventarioPorProductosYCedulaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            TUsuario[4] = "5";
+            TUsuario[4] = "6";
             TUsuario[5] = "2";
             int Permiso = Validar.Validar_Nivel_2(TUsuario);
             TUsuario[6] = Permiso.ToString();
@@ -290,7 +309,7 @@ namespace SISPROIN.Formularios
 
         private void resumenDeMovimientoDeInventarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            TUsuario[4] = "5";
+            TUsuario[4] = "6";
             TUsuario[5] = "3";
             int Permiso = Validar.Validar_Nivel_2(TUsuario);
             TUsuario[6] = Permiso.ToString();
@@ -306,5 +325,7 @@ namespace SISPROIN.Formularios
                 MessageBox.Show("No tiene el permiso para acceder.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
         }
+
+  
     }
 }

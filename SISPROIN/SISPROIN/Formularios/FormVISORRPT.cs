@@ -61,7 +61,6 @@ namespace SISPROIN.Formularios
             Cnn.ConecDb_Close();
         }
 
-
         public void Reporte_RESMOVINV(string vdesde, string vhasta)
         {
             DateTime dd = Convert.ToDateTime(vdesde);
@@ -81,6 +80,26 @@ namespace SISPROIN.Formularios
                 rpt.SetDataSource(DS);
                 rpt.SetParameterValue("Rdesde", string.Format("{0:d}", dd));
                 rpt.SetParameterValue("Rhasta", string.Format("{0:dd/MM/yyyy}", dh));
+                crystalReportViewer1.ReportSource = rpt;
+                crystalReportViewer1.Refresh();
+            }
+            Cnn.ConecDb_Close();
+        }
+
+        public void Reporte_LISPER()
+        {
+            Text = "Listado de Trabajdores";
+            Cnn.ConecDb_Abrir();
+            DTSDATOS DS = new DTSDATOS();
+            CRp_LISPER rpt = new CRp_LISPER();
+            string strSQL = $"SELECT T1.cedper, (T1.nomper || ' ' || T1.apeper) AS nompersonal, T3.nomdpt, T2.desgco, T1.retper, T1.staper " +
+                $"FROM personal T1 " +
+                $"INNER JOIN grupcomobs T2 ON T2.codgco = T1.codgco " +
+                $"INNER JOIN departa T3 ON T3.coddpt = T1.coddpt " +
+                $"ORDER BY T3.nomdpt ASC, T1.cedper ASC ";
+            if (Cnn.GetDataSet(ref DS, strSQL, "employee"))
+            {
+                rpt.SetDataSource(DS);
                 crystalReportViewer1.ReportSource = rpt;
                 crystalReportViewer1.Refresh();
             }

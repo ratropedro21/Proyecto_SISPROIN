@@ -249,8 +249,6 @@ namespace SISPROIN.Funciones
         //    }
         //}
 
-       
-
         public Boolean BuscarCompraOBS(int vcedper, DateTime vfecdoc)
         {
             int nDeuda = 0;

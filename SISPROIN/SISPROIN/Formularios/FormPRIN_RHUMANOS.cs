@@ -117,5 +117,23 @@ namespace SISPROIN.Formularios
                 MessageBox.Show("No tiene el permiso para acceder.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
         }
+
+        private void listadoDePersonalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TUsuario[4] = "3";
+            TUsuario[5] = "1";
+            int Permiso = Validar.Validar_Nivel_2(TUsuario);
+            TUsuario[6] = Permiso.ToString();
+            if (Permiso < 5)
+            {
+                FormVISORRPT Vs = new FormVISORRPT();
+                Vs.Reporte_LISPER();
+                Vs.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("No tiene el permiso para acceder.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+        }
     }
 }

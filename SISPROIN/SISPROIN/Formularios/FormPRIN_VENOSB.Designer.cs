@@ -51,6 +51,8 @@
             this.movimientoDeInventarioPorProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.movimientoDeInventarioPorProductosYCedulasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.resumenDeMovimientoDeInventarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cuentasPorCobrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cobranzaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,6 +63,7 @@
             this.archivosToolStripMenuItem,
             this.inventarioToolStripMenuItem,
             this.ventasToolStripMenuItem,
+            this.cuentasPorCobrarToolStripMenuItem,
             this.obsequiosToolStripMenuItem,
             this.reportesToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -180,13 +183,13 @@
             this.ventasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.facturasToolStripMenuItem});
             this.ventasToolStripMenuItem.Name = "ventasToolStripMenuItem";
-            this.ventasToolStripMenuItem.Size = new System.Drawing.Size(65, 24);
+            this.ventasToolStripMenuItem.Size = new System.Drawing.Size(64, 24);
             this.ventasToolStripMenuItem.Text = "Ventas";
             // 
             // facturasToolStripMenuItem
             // 
             this.facturasToolStripMenuItem.Name = "facturasToolStripMenuItem";
-            this.facturasToolStripMenuItem.Size = new System.Drawing.Size(132, 24);
+            this.facturasToolStripMenuItem.Size = new System.Drawing.Size(131, 24);
             this.facturasToolStripMenuItem.Text = "Facturas";
             this.facturasToolStripMenuItem.Click += new System.EventHandler(this.facturasToolStripMenuItem_Click);
             // 
@@ -236,6 +239,21 @@
             this.resumenDeMovimientoDeInventarioToolStripMenuItem.Text = "Resumen de Movimiento de Inventario";
             this.resumenDeMovimientoDeInventarioToolStripMenuItem.Click += new System.EventHandler(this.resumenDeMovimientoDeInventarioToolStripMenuItem_Click);
             // 
+            // cuentasPorCobrarToolStripMenuItem
+            // 
+            this.cuentasPorCobrarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cobranzaToolStripMenuItem});
+            this.cuentasPorCobrarToolStripMenuItem.Name = "cuentasPorCobrarToolStripMenuItem";
+            this.cuentasPorCobrarToolStripMenuItem.Size = new System.Drawing.Size(149, 24);
+            this.cuentasPorCobrarToolStripMenuItem.Text = "Cuentas por Cobrar";
+            // 
+            // cobranzaToolStripMenuItem
+            // 
+            this.cobranzaToolStripMenuItem.Name = "cobranzaToolStripMenuItem";
+            this.cobranzaToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
+            this.cobranzaToolStripMenuItem.Text = "Cobranza";
+            this.cobranzaToolStripMenuItem.Click += new System.EventHandler(this.cobranzaToolStripMenuItem_Click);
+            // 
             // FormPRIN_VENOSB
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -278,5 +296,7 @@
         private System.Windows.Forms.ToolStripMenuItem configuraciónDeImprDeTicketToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem movimientoDeInventarioPorProductosYCedulasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem resumenDeMovimientoDeInventarioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cuentasPorCobrarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cobranzaToolStripMenuItem;
     }
 }

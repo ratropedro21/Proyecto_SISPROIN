@@ -347,6 +347,7 @@ namespace SISPROIN.Formularios.VentasObsequios
             Bloqueos();
             TID = FunTID.BuscarUltimo();
             Asignar();
+            Lb_CodTid.Focus();
         }
 
         private void Txt_TipTid_KeyDown(object sender, KeyEventArgs e)

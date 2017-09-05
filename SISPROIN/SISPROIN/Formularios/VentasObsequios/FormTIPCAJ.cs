@@ -332,6 +332,7 @@ namespace SISPROIN.Formularios.VentasObsequios
             Bloqueos();
             TMC = FunTMC.BuscarUltimo();
             Asignar();
+            Lb_CodTmc.Focus();
         }
 
         private void Txt_TipTmc_KeyDown(object sender, KeyEventArgs e)

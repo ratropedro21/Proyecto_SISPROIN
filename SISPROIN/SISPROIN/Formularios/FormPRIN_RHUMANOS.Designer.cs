@@ -37,7 +37,7 @@
             this.inasistenciaDelDiaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vacacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listadoDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listadoDePersonalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -111,16 +111,17 @@
             // reportesToolStripMenuItem
             // 
             this.reportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.listadoDeToolStripMenuItem});
+            this.listadoDePersonalToolStripMenuItem});
             this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
             this.reportesToolStripMenuItem.Size = new System.Drawing.Size(80, 24);
             this.reportesToolStripMenuItem.Text = "Reportes";
             // 
-            // listadoDeToolStripMenuItem
+            // listadoDePersonalToolStripMenuItem
             // 
-            this.listadoDeToolStripMenuItem.Name = "listadoDeToolStripMenuItem";
-            this.listadoDeToolStripMenuItem.Size = new System.Drawing.Size(295, 24);
-            this.listadoDeToolStripMenuItem.Text = "Listado de Personal Segun Status";
+            this.listadoDePersonalToolStripMenuItem.Name = "listadoDePersonalToolStripMenuItem";
+            this.listadoDePersonalToolStripMenuItem.Size = new System.Drawing.Size(206, 24);
+            this.listadoDePersonalToolStripMenuItem.Text = "Listado de Personal";
+            this.listadoDePersonalToolStripMenuItem.Click += new System.EventHandler(this.listadoDePersonalToolStripMenuItem_Click);
             // 
             // FormPRIN_RHUMANOS
             // 
@@ -150,6 +151,6 @@
         private System.Windows.Forms.ToolStripMenuItem gruposDePersonalToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem departamentosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem vacacionesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem listadoDeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem listadoDePersonalToolStripMenuItem;
     }
 }

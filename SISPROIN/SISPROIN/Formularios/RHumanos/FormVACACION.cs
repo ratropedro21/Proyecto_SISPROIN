@@ -367,60 +367,62 @@ namespace SISPROIN.Formularios.RHumanos
         private void Cmd_Cancelar_Click(object sender, EventArgs e)
         {
             Bloqueos();
+            //Form activeChild = ActiveMdiChild;
             PER = FunPER.BuscarUltimo();
             Asignar();
+            Lb_CodVac.Focus();
         }
 
-        private void FormVACACION_KeyDown(object sender, KeyEventArgs e)
+        private void FormVACACION_KeyDown(object sender, KeyEventArgs l)
         {
-            switch (e.KeyCode)
+            switch (l.KeyCode)
             {
                 case Keys.F1:
-                    e.SuppressKeyPress = true;
+                    l.SuppressKeyPress = true;
                     Cmd_Nuevo.PerformClick();
                     break;
                 case Keys.F2:
-                    e.SuppressKeyPress = true;
+                    l.SuppressKeyPress = true;
                     Cmd_Modificar.PerformClick();
                     break;
                 case Keys.F3:
-                    e.SuppressKeyPress = true;
+                    l.SuppressKeyPress = true;
                     Cmd_Primero.PerformClick();
                     break;
                 case Keys.F4:
-                    e.SuppressKeyPress = true;
+                    l.SuppressKeyPress = true;
                     Cmd_Anterior.PerformClick();
                     break;
                 case Keys.F5:
-                    e.SuppressKeyPress = true;
+                    l.SuppressKeyPress = true;
                     Cmd_Siguiente.PerformClick();
                     break;
                 case Keys.F6:
-                    e.SuppressKeyPress = true;
+                    l.SuppressKeyPress = true;
                     Cmd_Ultimo.PerformClick();
                     break;
                 case Keys.F7:
-                    e.SuppressKeyPress = true;
+                    l.SuppressKeyPress = true;
                     Cmd_Buscar.PerformClick();
                     break;
                 case Keys.F8:
-                    e.SuppressKeyPress = true;
+                    l.SuppressKeyPress = true;
                     Cmd_Anular.PerformClick();
                     break;
                 case Keys.F9:
-                    e.SuppressKeyPress = true;
+                    l.SuppressKeyPress = true;
                     Cmd_Imprimir.PerformClick();
                     break;
                 case Keys.F10:
-                    e.SuppressKeyPress = true;
+                    l.SuppressKeyPress = true;
                     Cmd_Aceptar.PerformClick();
                     break;
                 case Keys.F11:
-                    e.SuppressKeyPress = true;
+                    l.SuppressKeyPress = true;
                     Cmd_Guardar.PerformClick();
                     break;
                 case Keys.F12:
-                    e.SuppressKeyPress = true;
+                    l.SuppressKeyPress = true;
                     Cmd_Cancelar.PerformClick();
                     break;
             }
